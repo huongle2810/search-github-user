@@ -6,6 +6,7 @@ import UserTable from "./components/UserTable";
 function App() {
   return (
     <div className="App">
+      <h3>Search Github users</h3>
       <SearchInput />
       <UserTable />
     </div>

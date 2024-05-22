@@ -1,5 +1,6 @@
 const unionOverlapItems = (array: { start: number; end: number }[]) => {
   const sortedArr = array.sort((a, b) => a.start - b.start);
+  console.log({ sortedArr });
   let index = 0;
   const result: { start: number; end: number }[] = [];
   return sortedArr.reduce((preVal, curVal, currentIndex) => {
@@ -26,7 +27,6 @@ const overlapItems: { start: number; end: number }[] = [
   { start: 35, end: 50 },
   { start: 20, end: 40 },
   { start: 60, end: 70 },
-  { start: 77, end: 80 },
 ];
 
 const result = unionOverlapItems(overlapItems);
