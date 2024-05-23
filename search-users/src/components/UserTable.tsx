@@ -2,6 +2,7 @@ import React from "react";
 import { useSelector } from "react-redux";
 import { selectUsers, selectLoading } from "../redux/users/slicedUsers";
 import { LoadingSpinner } from "./LoadingSpinner";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 const UserTable: React.FC = () => {
   const users = useSelector(selectUsers);
@@ -29,7 +30,12 @@ const UserTable: React.FC = () => {
             {users.map((user) => (
               <tr key={user.id}>
                 <td>
-                  <img src={user.avatar_url} alt={user.login} width="40" />
+                  <LazyLoadImage
+                    src={user.avatar_url}
+                    alt={user.login}
+                    width={40}
+                    height={40}
+                  />
                 </td>
                 <td>{user.login}</td>
                 <td>{user.type}</td>
